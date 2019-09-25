@@ -47,6 +47,7 @@ dependencies {
     implementation dependencies.koin
 
     testImplementation testDependencies.junit
-    androidTestImplementation testDependencies.runner
+    testImplementation testDependencies.runner
+    testImplementation testDependencies.roboletric
     androidTestImplementation testDependencies.espresso
 }

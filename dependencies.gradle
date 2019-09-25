@@ -44,6 +44,7 @@ ext {
     junitVersion = '4.12'
     espressoVersion = '3.1.1'
     runnerVersion = '1.1.1'
+    roboletricVersion = '4.0.2'
 
     //Firebase
     fbAnalytics = '17.2.0'
@@ -98,6 +99,7 @@ ext {
     testDependecies = [
             junit                 : "junit:junit:$junitVersion",
             espresso              : "androidx.test.espresso:espresso-core:$espressoVersion",
-            runner                : "androidx.test:runner:$runnerVersion"
+            runner                : "androidx.test:runner:$runnerVersion",
+            roboletric            : "org.robolectric:robolectric:$roboletricVersion",
     ]
 }
