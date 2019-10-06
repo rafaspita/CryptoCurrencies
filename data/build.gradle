@@ -4,7 +4,7 @@ apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion androidCompileSdkVersion
-
+    testOptions.unitTests.includeAndroidResources = true
     defaultConfig {
         minSdkVersion androidMinSdkVersion
         targetSdkVersion androidTargetSdkVersion
@@ -49,5 +49,7 @@ dependencies {
     testImplementation testDependencies.junit
     testImplementation testDependencies.runner
     testImplementation testDependencies.roboletric
+    testImplementation testDependencies.mockk
     androidTestImplementation testDependencies.espresso
+
 }

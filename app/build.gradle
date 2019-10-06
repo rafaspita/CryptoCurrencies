@@ -6,6 +6,7 @@ apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion androidCompileSdkVersion
+    testOptions.unitTests.includeAndroidResources = true
     buildToolsVersion androidBuildToolsVersion
     defaultConfig {
         applicationId androidApplicationId
@@ -34,7 +35,6 @@ dependencies {
     def dependencies = rootProject.ext.dependencies
     def testDependencies = rootProject.ext.testDependecies
 
-    implementation dependencies.appCompact
     implementation dependencies.constraintlayout
 
     implementation dependencies.androidChart
