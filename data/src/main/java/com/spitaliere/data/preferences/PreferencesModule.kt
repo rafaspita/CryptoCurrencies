@@ -10,6 +10,6 @@ import org.koin.dsl.module
 object PreferencesModule {
 
     fun getModule() = module {
-        single{ PreferencesImpl(androidContext().getSharedPreferences("PREFERENCES", Context.MODE_PRIVATE)) }
+        single<Preferences>{ PreferencesImpl(androidContext().getSharedPreferences("PREFERENCES", Context.MODE_PRIVATE)) }
     }
 }

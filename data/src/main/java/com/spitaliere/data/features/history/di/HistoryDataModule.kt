@@ -6,6 +6,7 @@ import com.spitaliere.data.features.history.datasource.remote.HistoryRemoteDataS
 import com.spitaliere.data.features.history.datasource.remote.HistoryRemoteDataSourceImpl
 import com.spitaliere.data.features.history.repository.HistoryRepositoryImpl
 import com.spitaliere.data.platform.database.AppDataBase
+import com.spitaliere.domain.features.history.repository.HistoryRepository
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
@@ -18,7 +19,7 @@ object HistoryDataModule {
         single { AppDataBase.createDataBase(androidContext()).historyDao() }
         factory<HistoryLocalDataSource>{ HistoryLocalDataSourceImpl(historyDao = get()) }
         factory<HistoryRemoteDataSource>{ HistoryRemoteDataSourceImpl(coinCapApi = get()) }
-        factory{
+        factory<HistoryRepository>{
             HistoryRepositoryImpl(
                 remoteDataSource = get(),
                 localDataSource = get()

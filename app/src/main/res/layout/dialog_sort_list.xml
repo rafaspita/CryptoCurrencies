@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:orientation="vertical"
+            android:background="@color/colorPrimaryLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/order_by"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginStart="6dp"
+                android:layout_marginBottom="10dp"/>
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:text="@string/by_rank"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/byRank"
+                    android:textColorHighlight="@color/colorAccent"
+                    android:layout_marginBottom="5dp"/>
+
+                <RadioButton
+                    android:text="@string/by_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/byName"
+                    android:layout_marginBottom="5dp"/>
+
+                <RadioButton
+                    android:text="@string/by_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/byPrice"
+                    android:layout_marginBottom="5dp"/>
+
+                <RadioButton
+                    android:text="@string/by_change_24hrs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/byChange"
+                    android:layout_marginBottom="5dp"/>
+            </RadioGroup>
+
+        </LinearLayout>
+
+    </FrameLayout>
+</layout>

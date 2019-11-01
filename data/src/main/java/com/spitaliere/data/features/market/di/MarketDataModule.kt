@@ -6,6 +6,7 @@ import com.spitaliere.data.features.market.datasource.remote.MarketRemoteDataSou
 import com.spitaliere.data.features.market.datasource.remote.MarketRemoteDataSourceImpl
 import com.spitaliere.data.features.market.repository.MarketRepositoryImpl
 import com.spitaliere.data.platform.database.AppDataBase
+import com.spitaliere.domain.features.market.repository.MarketRepository
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
@@ -18,7 +19,7 @@ object MarketDataModule {
         single { AppDataBase.createDataBase(androidContext()).marketDao() }
         factory<MarketRemoteDataSource>{ MarketRemoteDataSourceImpl(coinCapApi = get()) }
         factory<MarketLocalDataSource>{ MarketLocalDataSourceImpl(marketDao = get()) }
-        factory{
+        factory<MarketRepository>{
             MarketRepositoryImpl(
                 remoteDataSource = get(),
                 localDataSource = get()

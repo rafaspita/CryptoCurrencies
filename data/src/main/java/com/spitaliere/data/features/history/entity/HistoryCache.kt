@@ -6,6 +6,7 @@ import androidx.room.TypeConverters
 import com.spitaliere.data.platform.converter.HistoryConverter
 import com.spitaliere.domain.features.history.entity.History
 import com.spitaliere.domain.features.history.entity.HistoryData
+import com.spitaliere.domain.platform.extension.toDateHM
 
 /**
  * Created by Rafael Spitaliere on 23/09/2019.
@@ -25,12 +26,12 @@ fun HistoryCache.mapToDomain() : History = History(
 
 data class HistoryCacheData(
     var priceUsd : Float = 0f,
-    var time: String = ""
+    var time: Long = 0
 )
 
 fun HistoryCacheData.mapToDomain() : HistoryData = HistoryData(
     priceUsd = priceUsd,
-    time = time
+    time = time.toDateHM()
 )
 
 fun List<HistoryCacheData>.mapToDomain() : List<HistoryData> = map { it.mapToDomain() }

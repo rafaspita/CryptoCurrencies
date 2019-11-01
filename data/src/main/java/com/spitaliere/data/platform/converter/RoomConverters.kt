@@ -10,17 +10,22 @@ import java.lang.reflect.Type
 /**
  * Created by Rafael Spitaliere on 23/09/2019.
  **/
-open class ConverterBase<ENTITY> {
-
-    private val type: Type = object : TypeToken<List<ENTITY>>() {}.type
-
-    @TypeConverter
-    fun fromList(list: List<ENTITY>) : String = Gson().toJson(list, type)
+class HistoryConverter{
+    val type: Type = object : TypeToken<List<HistoryCacheData>>() {}.type
 
     @TypeConverter
-    fun toList(items: String): List<ENTITY> = Gson().fromJson(items, type)
+    fun fromList(list: List<HistoryCacheData>) : String = Gson().toJson(list, type)
+
+    @TypeConverter
+    fun toList(items: String): List<HistoryCacheData> = Gson().fromJson(items, type)
 }
 
-class HistoryConverter : ConverterBase<HistoryCacheData>()
+class MarketConverter {
+    val type: Type = object : TypeToken<List<MarketCacheData>>() {}.type
 
-class MarketConverter : ConverterBase<MarketCacheData>()
+    @TypeConverter
+    fun fromList(list: List<MarketCacheData>) : String = Gson().toJson(list, type)
+
+    @TypeConverter
+    fun toList(items: String): List<MarketCacheData> = Gson().fromJson(items, type)
+}

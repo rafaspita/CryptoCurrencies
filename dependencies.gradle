@@ -35,7 +35,7 @@ ext {
     retrofitLogging = '4.2.0'
 
     //Gson
-    gsonVersion = '2.8.5'
+    gsonVersion = '2.8.6'
 
     //Room
     roomVersion = '2.2.0-rc01'

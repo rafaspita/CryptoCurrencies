@@ -1,6 +1,7 @@
 package com.spitaliere.cryptocurrencies
 
 import android.app.Application
+import com.spitaliere.cryptocurrencies.ui.di.PresentationModules
 import com.spitaliere.data.platform.di.DataModules
 import com.spitaliere.domain.platform.di.DomainModules
 import org.koin.android.ext.koin.androidContext
@@ -19,6 +20,7 @@ class CryptoCurrenciesApplication : Application() {
             modules( modules =
                 DataModules.getModules()
                 + DomainModules.getModules()
+                + PresentationModules.getModules()
             )
         }
     }

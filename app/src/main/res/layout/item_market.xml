@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="item"
+            type="com.spitaliere.domain.features.market.entity.MarketData" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                tools:text="Exchange"
+                android:textColor="@color/colorAccent"
+                android:text="@string/exchange"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView"
+                android:layout_marginTop="8dp" android:layout_marginBottom="8dp"
+                android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                style="@style/MyCustomTextView"
+                tools:text="Binance"
+                android:text="@{item.exchangeId}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="4dp"/>
+
+            <TextView
+                style="@style/MyCustomTextView"
+                tools:text="9,000"
+                android:text="@{`$ ` + item.getPrice()}"
+                android:textAlignment="viewEnd"
+                android:layout_width="0dp"
+                android:layout_marginEnd="8dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:id="@+id/itemPrice"
+                android:layout_marginStart="8dp"
+                app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="8dp"
+                app:layout_constraintVertical_bias="0.0"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/background2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:layout_marginBottom="1dp"
+            android:orientation="horizontal">
+
+            <TextView
+                tools:text="Volume24h:"
+                android:text="@string/volume24h"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                style="@style/MyCustomTextView"
+                tools:text="131887921.57931071603"
+                android:text="@{`$ ` + item.getVolumeUsd()}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="4dp"/>
+
+            <TextView
+                style="@style/MyCustomTextView"
+                tools:text="3%"
+                android:text="@{item.getVolume()}"
+                android:textAlignment="viewEnd"
+                android:layout_width="0dp"
+                android:layout_marginEnd="8dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="8dp"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

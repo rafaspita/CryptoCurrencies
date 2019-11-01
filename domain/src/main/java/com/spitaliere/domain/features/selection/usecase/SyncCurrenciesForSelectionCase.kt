@@ -7,7 +7,7 @@ import io.reactivex.Single
 /**
  * Created by Rafael Spitaliere on 25/09/2019.
  **/
-class SyncCurrenciesForSelectionCase(private val selectionRepository: SelectionRepository) : SingleUseCase<Nothing, Boolean> {
+class SyncCurrenciesForSelectionCase(private val selectionRepository: SelectionRepository) : SingleUseCase<Boolean> {
 
-    override fun run(input: Nothing): Single<Boolean> = selectionRepository.syncCurrenciesForSelection()
+    override fun run(): Single<Boolean> = selectionRepository.syncCurrenciesForSelection()
 }

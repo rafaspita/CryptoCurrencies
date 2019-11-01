@@ -4,6 +4,7 @@ import com.spitaliere.data.features.selection.datasource.local.SelectionLocalDat
 import com.spitaliere.data.features.selection.datasource.local.SelectionLocalDataSourceImpl
 import com.spitaliere.data.features.selection.repository.SelectionRepositoryImpl
 import com.spitaliere.data.platform.database.AppDataBase
+import com.spitaliere.domain.features.selection.repository.SelectionRepository
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
@@ -15,7 +16,7 @@ object SelectionDataModule {
     fun getModule() = module {
         single { AppDataBase.createDataBase(androidContext()).selectionDao() }
         factory<SelectionLocalDataSource>{ SelectionLocalDataSourceImpl(selectionDao = get()) }
-        factory {
+        factory<SelectionRepository> {
             SelectionRepositoryImpl(
                 localDataSource = get(),
                 currencyRemoteDataSource = get()

@@ -6,6 +6,49 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- Custom Widgets  -->
+        <item name="android:buttonStyle">@style/MyCustomButton</item>
+        <item name="radioButtonStyle">@style/CustomRadioButton</item>
+
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="MyCustomButton" parent="android:Widget.Button">
+        <item name="android:background">@color/colorSecondary</item>
+        <item name="android:height">@dimen/button_height</item>
+    </style>
+
+    <style name="MyCustomCheckBox" parent="android:Widget.Material.CompoundButton.CheckBox">
+        <item name="android:buttonTint">@color/colorSecondary</item>
+    </style>
+
+    <style name="MyCustomTextView" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ActivityFullScreen" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="CustomDialog" parent="@android:style/Theme.Translucent.NoTitleBar">
+        <item name="android:gravity">bottom</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowMinWidthMajor">100%</item>
+        <item name="android:windowMinWidthMinor">100%</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="CustomRadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:buttonTint">@drawable/selector_checkbox</item>
+        <item name="android:textColor">@drawable/selector_checkbox</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="item"
+            type="com.spitaliere.domain.features.selection.entity.Selection" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryLight"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="1dp"
+            android:layout_marginStart="1dp" android:layout_marginEnd="1dp">
+
+            <CheckBox
+                style="@style/MyCustomCheckBox"
+                android:text="@{item.coinName}"
+                tools:text="Bitcoin"
+                android:clickable="false"
+                android:layout_weight="3"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkBox"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:srcCompat="@mipmap/ic_launcher"
+                android:id="@+id/imageView"
+                android:layout_margin="8dp"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

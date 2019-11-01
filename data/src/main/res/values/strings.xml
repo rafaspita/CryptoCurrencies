@@ -1,4 +1,3 @@
 <resources>
-    <string name="app_name">data</string>
     <string name="base_url">https://api.coincap.io/v2/</string>
 </resources>

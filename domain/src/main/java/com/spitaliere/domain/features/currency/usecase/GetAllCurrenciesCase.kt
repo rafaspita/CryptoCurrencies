@@ -8,7 +8,7 @@ import io.reactivex.Flowable
 /**
  * Created by Rafael Spitaliere on 25/09/2019.
  **/
-class GetAllCurrenciesCase (private val currencyRepository: CurrencyRepository) : FlowableUseCase<Nothing, List<Currency>> {
+class GetAllCurrenciesCase (private val currencyRepository: CurrencyRepository) : FlowableUseCase<List<Currency>> {
 
-    override fun run(input: Nothing): Flowable<List<Currency>> = currencyRepository.getAllCurrencies()
+    override fun run(): Flowable<List<Currency>> = currencyRepository.getAllCurrencies()
 }
